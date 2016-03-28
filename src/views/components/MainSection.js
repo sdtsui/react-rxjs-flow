@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import Intent from '../intent';
-// import TodoItem from './TodoItem'
-// import Footer from './Footer'
+import TodoItem from './TodoItem'
+import Footer from './Footer'
 
 const SHOW_ALL = 'show_all';
 const SHOW_COMPLETED = 'show_completed';
@@ -21,7 +20,6 @@ class MainSection extends Component {
 
   handleClearCompleted() {
     Intent.clearCompleted();
-    // *** continue with all actions in this component
   }
 
   handleShow(filter) {
@@ -29,14 +27,14 @@ class MainSection extends Component {
   }
 
   renderToggleAll(completedCount) {
-    const { todos, intents } = this.props
+    const { todos, Intent } = this.props
     if (todos.length > 0) {
       return (
         <input className="toggle-all"
                type="checkbox"
                checked={completedCount === todos.length}
-               onChange={intents.completeAll} />
-      )
+               onChange={Intent.completeAll} />
+      );
     }
   }
 
@@ -71,7 +69,7 @@ class MainSection extends Component {
         {this.renderToggleAll(completedCount)}
         <ul className="todo-list">
           {filteredTodos.map(todo =>
-            <TodoItem key={todo.id} todo={todo} {...intents} />
+            <TodoItem key={todo.id} todo={todo} Intent={this.props.Intent}/>
           )}
         </ul>
         {this.renderFooter(completedCount)}

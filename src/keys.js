@@ -8,5 +8,5 @@ module.exports = keyMirror({
   TODOS_COMPLETE_ALL: null,
   TODOS_CLEAR_COMPLETED: null,
   // CHANGE_FILTER: null, 
-  // change_filter isn't a part of state. commenting out
+  // change_filter isn't actually a part of app state. commenting out, moving to component state
 });
