@@ -10,7 +10,11 @@
   - import CSS
   - push to new repo in upload commit
 
-
+todo: 
+  1. Working React
+  2. Unit Tests for data layer
+  3. Linter: Complete React TODO; share with Patrick
+  4. Split into Angular2, Angular 1.5 Folders
 
 
 

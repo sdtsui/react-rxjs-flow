@@ -1,9 +1,8 @@
 var Rx = require('rx');
 var Model = require('./model');
-
 var React = require('react');
-var MainSection = require('./views/components/MainSection');
-
+var TodoApp = require('./views/TodoApp');
+import Intent from './intent';
 
 // **since we're not filtering, we should just be able to use Model.subject, as it inherits Observable
 var Observable = Model.subject.map(function (appState) {
@@ -18,16 +17,18 @@ var Observable = Model.subject.map(function (appState) {
   // });
   // 
   // Do Nothing for Now:
-
-
   return appState;
 });
 
 
 //REACT ENTRYPOINT
 Observable.subscribe((appState) => {
+  //Dirty:
+  
+  appState.Intent = Intent;
+
   React.render(
-    <MainSection {...appState}/>,
+    <TodoApp {...appState}/>,
     document.getElementById('app')
   );
 });
