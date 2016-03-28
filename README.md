@@ -1,5 +1,22 @@
 # react-rxjs-flow
 
+
+
+### Notes to Self: 
+  Next Steps:
+  - render component, hook up logic
+  - import CSS
+  - push to new repo in upload commit
+
+
+
+
+
+
+
+
+
+
 A simple React application using RxJS for data flow.
 
 

@@ -8,7 +8,7 @@ let defaultTodo = {
   id: 0,
   text: "RFP Things",
   completed: false,
-}
+};
 
 var state = {
   todos: [defaultTodo],
@@ -38,7 +38,7 @@ function add(text) {
   subject.onNext(state);
 }
 
-function delete(id) {
+function del(id) {
   let todos = state.todos.slice();
   todos = todos.filter(todo => todo.id !== id);
 
@@ -143,7 +143,7 @@ Intent.subject.subscribe(function (payload) {
       add(payload.text);
       break;
     case Keys.TODO_DELETE:
-      delete(payload.id);
+      del(payload.id);
       break;
     case Keys.TODO_EDIT:
       edit(

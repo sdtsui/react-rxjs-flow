@@ -2,6 +2,8 @@ var Rx = require('rx');
 
 var Keys = require('./keys');
 
+
+//tracks the last "1" changes
 var intentSubject = new Rx.ReplaySubject(1);
 
 module.exports = {
