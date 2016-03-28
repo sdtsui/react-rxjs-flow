@@ -4,6 +4,8 @@
 
 ### Notes to Self: 
   Next Steps:
+  --convert all actions to intent
+
   - render component, hook up logic
   - import CSS
   - push to new repo in upload commit
